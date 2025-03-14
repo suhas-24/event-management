@@ -1,0 +1,48 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Confetti pieces with vibrant colors -->
+  <rect x="10" y="10" width="10" height="5" rx="1" fill="#FF5E5B" transform="rotate(15 10 10)">
+    <animate attributeName="y" from="-20" to="120" dur="3s" repeatCount="indefinite" begin="0.1s" />
+    <animate attributeName="x" from="10" to="30" dur="3s" repeatCount="indefinite" begin="0.1s" />
+    <animate attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" begin="0.1s" />
+  </rect>
+  <rect x="30" y="15" width="8" height="4" rx="1" fill="#4CB944" transform="rotate(45 30 15)">
+    <animate attributeName="y" from="-10" to="110" dur="2.7s" repeatCount="indefinite" begin="0.5s" />
+    <animate attributeName="x" from="30" to="10" dur="2.7s" repeatCount="indefinite" begin="0.5s" />
+    <animate attributeName="opacity" from="1" to="0" dur="2.7s" repeatCount="indefinite" begin="0.5s" />
+  </rect>
+  <rect x="50" y="5" width="6" height="6" rx="3" fill="#FFDB15" transform="rotate(30 50 5)">
+    <animate attributeName="y" from="-15" to="115" dur="3.2s" repeatCount="indefinite" begin="0.2s" />
+    <animate attributeName="x" from="50" to="70" dur="3.2s" repeatCount="indefinite" begin="0.2s" />
+    <animate attributeName="opacity" from="1" to="0" dur="3.2s" repeatCount="indefinite" begin="0.2s" />
+  </rect>
+  <rect x="70" y="20" width="12" height="3" rx="1" fill="#7B66FF" transform="rotate(60 70 20)">
+    <animate attributeName="y" from="-5" to="105" dur="2.9s" repeatCount="indefinite" begin="0.7s" />
+    <animate attributeName="x" from="70" to="50" dur="2.9s" repeatCount="indefinite" begin="0.7s" />
+    <animate attributeName="opacity" from="1" to="0" dur="2.9s" repeatCount="indefinite" begin="0.7s" />
+  </rect>
+  <rect x="85" y="10" width="7" height="7" rx="1" fill="#00C2A8" transform="rotate(75 85 10)">
+    <animate attributeName="y" from="-25" to="125" dur="3.5s" repeatCount="indefinite" begin="0.3s" />
+    <animate attributeName="x" from="85" to="65" dur="3.5s" repeatCount="indefinite" begin="0.3s" />
+    <animate attributeName="opacity" from="1" to="0" dur="3.5s" repeatCount="indefinite" begin="0.3s" />
+  </rect>
+  <rect x="20" y="30" width="9" height="4" rx="1" fill="#FF9A00" transform="rotate(20 20 30)">
+    <animate attributeName="y" from="-15" to="115" dur="3.1s" repeatCount="indefinite" begin="0.9s" />
+    <animate attributeName="x" from="20" to="40" dur="3.1s" repeatCount="indefinite" begin="0.9s" />
+    <animate attributeName="opacity" from="1" to="0" dur="3.1s" repeatCount="indefinite" begin="0.9s" />
+  </rect>
+  <rect x="40" y="25" width="5" height="5" rx="2.5" fill="#F73F52" transform="rotate(40 40 25)">
+    <animate attributeName="y" from="-20" to="120" dur="2.8s" repeatCount="indefinite" begin="0.4s" />
+    <animate attributeName="x" from="40" to="20" dur="2.8s" repeatCount="indefinite" begin="0.4s" />
+    <animate attributeName="opacity" from="1" to="0" dur="2.8s" repeatCount="indefinite" begin="0.4s" />
+  </rect>
+  <rect x="60" y="35" width="10" height="3" rx="1" fill="#9A48D0" transform="rotate(55 60 35)">
+    <animate attributeName="y" from="-10" to="110" dur="3.3s" repeatCount="indefinite" begin="0.6s" />
+    <animate attributeName="x" from="60" to="80" dur="3.3s" repeatCount="indefinite" begin="0.6s" />
+    <animate attributeName="opacity" from="1" to="0" dur="3.3s" repeatCount="indefinite" begin="0.6s" />
+  </rect>
+  <rect x="80" y="30" width="6" height="6" rx="1" fill="#00A1E4" transform="rotate(70 80 30)">
+    <animate attributeName="y" from="-5" to="105" dur="3s" repeatCount="indefinite" begin="0.8s" />
+    <animate attributeName="x" from="80" to="60" dur="3s" repeatCount="indefinite" begin="0.8s" />
+    <animate attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" begin="0.8s" />
+  </rect>
+</svg>

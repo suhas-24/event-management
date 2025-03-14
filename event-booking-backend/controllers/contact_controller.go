@@ -6,9 +6,10 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yourusername/event-booking-backend/models"
-	"github.com/yourusername/event-booking-backend/utils"
 	"gorm.io/gorm"
+
+	"event-booking-backend/models"
+	"event-booking-backend/utils"
 )
 
 // ContactController handles all contact form related operations

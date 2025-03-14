@@ -5,7 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/yourusername/event-booking-backend/models"
+	"event-booking-backend/models"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -28,8 +29,34 @@ func InitDB() *gorm.DB {
 		log.Fatal("Failed to connect to database: ", err)
 	}
 
-	// Auto migrate models
-	db.AutoMigrate(&models.Booking{}, &models.Contact{})
+	// Drop existing tables
+	db.Migrator().DropTable(&models.Booking{})
+
+	// Create bookings table with explicit column types
+	err = db.Exec(`
+		CREATE TABLE bookings (
+			id TEXT PRIMARY KEY,
+			hall_id TEXT NOT NULL,
+			customer_name TEXT NOT NULL,
+			customer_email TEXT NOT NULL,
+			customer_phone TEXT NOT NULL,
+			guest_count INTEGER NOT NULL,
+			event_date TIMESTAMP NOT NULL,
+			start_time TEXT NOT NULL,
+			end_time TEXT NOT NULL,
+			special_requests TEXT,
+			status TEXT NOT NULL DEFAULT 'pending',
+			total_price DOUBLE PRECISION NOT NULL,
+			created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+			updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+		)
+	`).Error
+	if err != nil {
+		log.Fatal("Failed to create bookings table: ", err)
+	}
+
+	// Auto migrate other tables
+	db.AutoMigrate(&models.Contact{})
 
 	return db
 }

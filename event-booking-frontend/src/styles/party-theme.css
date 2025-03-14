@@ -1,0 +1,148 @@
+/* Party Theme CSS - Custom animations and effects */
+
+/* Gradient text effects */
+.party-gradient-text {
+  background: linear-gradient(to right, #FF5E5B, #7B66FF, #00C2A8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.party-gradient-text-alt {
+  background: linear-gradient(to right, #FF4ECD, #FFDB15, #00A1E4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Gradient backgrounds */
+.party-gradient-bg {
+  background: linear-gradient(120deg, rgba(255,94,91,0.2), rgba(123,102,255,0.2), rgba(0,194,168,0.2));
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.party-gradient-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.party-gradient-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #FF5E5B, #7B66FF, #00C2A8, #FFDB15, #FF4ECD);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradientBorder 6s ease infinite;
+  border-radius: 0.85rem;
+}
+
+/* Confetti overlay for celebrations */
+.confetti-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 10px rgba(123,102,255,0.5), 0 0 20px rgba(123,102,255,0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 15px rgba(123,102,255,0.7), 0 0 30px rgba(123,102,255,0.5);
+}
+
+/* Shiny button effect */
+.shiny-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.2), rgba(255,255,255,0) 80%);
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.shiny-button:hover::after {
+  opacity: 1;
+  animation: shine 1.5s ease-in-out;
+}
+
+/* Floating elements */
+.float-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes gradientBG {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gradientBorder {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% center; }
+  100% { background-position: 100% center; }
+}
+
+@keyframes shine {
+  0% { transform: rotate(30deg) translateX(-200%); }
+  100% { transform: rotate(30deg) translateX(200%); }
+}
+
+/* 3D card effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Party-themed scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(123,102,255,0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FF5E5B, #7B66FF);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #FF4ECD, #00C2A8);
+}
