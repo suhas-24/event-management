@@ -1,9 +1,10 @@
 package routes
 
 import (
+	"event-booking-backend/controllers"
+	"event-booking-backend/middlewares"
+
 	"github.com/gin-gonic/gin"
-	"github.com/suhas-24/event-management/event-booking-backend/controllers"
-	"github.com/suhas-24/event-management/event-booking-backend/middlewares"
 )
 
 // SetupRoutes configures all the routes for the application
