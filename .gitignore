@@ -1,0 +1,28 @@
+# Go specific
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+
+# Environment variables
+.env
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dependency directories
+vendor/
+
+# Log files
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
