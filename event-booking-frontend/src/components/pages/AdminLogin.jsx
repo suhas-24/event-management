@@ -1,18 +1,15 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const AdminLogin = () => {
+const AdminLogin = ({ onLogin, navigateTo }) => {
   const [token, setToken] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // In a real app, you would validate the token with the backend
-      localStorage.setItem('adminToken', token);
-      navigate('/admin/dashboard');
+      onLogin(token);
     } catch (err) {
       setError('Invalid admin token');
     }
@@ -20,16 +17,19 @@ const AdminLogin = () => {
 
   return (
     <motion.div
-      className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-md w-full space-y-8 bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-xl">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Admin Login
           </h2>
+          <p className="mt-2 text-center text-sm text-gray-600">
+            Enter your admin token to access the dashboard
+          </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
@@ -67,9 +67,20 @@ const AdminLogin = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-party-purple to-party-magenta hover:from-party-purple-dark hover:to-party-magenta-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             >
               Sign in
+            </motion.button>
+          </div>
+          
+          <div className="text-center">
+            <motion.button
+              type="button"
+              onClick={() => navigateTo('home')}
+              className="text-sm text-party-purple hover:text-party-purple-dark"
+              whileHover={{ scale: 1.05 }}
+            >
+              Return to Home
             </motion.button>
           </div>
         </form>

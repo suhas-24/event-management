@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { SparklesIcon } from '@heroicons/react/24/outline';
 import '../../../src/styles/party-theme.css';
 
-const Packages = () => {
+const Packages = ({ navigateTo }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -178,17 +177,14 @@ const Packages = () => {
             </div>
 
             <div className="mt-8 text-center">
-              <motion.div
+              <motion.button
+                onClick={() => navigateTo('booking')}
+                className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transform transition-all duration-300 shadow-lg hover:shadow-xl md:py-4 md:text-lg md:px-10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  to="/booking"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transform transition-all duration-300 shadow-lg hover:shadow-xl md:py-4 md:text-lg md:px-10"
-                >
-                  Book Now
-                </Link>
-              </motion.div>
+                Book Now
+              </motion.button>
             </div>
           </motion.div>
         ))}
@@ -210,6 +206,17 @@ const Packages = () => {
             <p className="mt-2 text-gray-600">Basic decoration is included in all packages. Custom decoration can be arranged at additional cost.</p>
           </div>
         </div>
+      </div>
+      
+      <div className="mt-12 text-center">
+        <motion.button
+          onClick={() => navigateTo('home')}
+          className="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Return to Home
+        </motion.button>
       </div>
     </motion.div>
   );
